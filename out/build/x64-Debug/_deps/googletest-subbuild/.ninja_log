@@ -1,0 +1,21 @@
+# ninja log v5
+4674	4711	7223620588462129	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	a26e35e5443c78f1
+0	45	7223620541792714	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	fc21316e27255a3d
+4558	4596	7223620587303613	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	ebeb773603bb3c8
+0	45	7223620541792714	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	fc21316e27255a3d
+4596	4634	7223620587684284	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	c2886e230c1f169a
+45	4558	7223620586925354	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	e3ff421bc8a6492e
+4558	4596	7223620587303613	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	ebeb773603bb3c8
+45	4558	7223620586925354	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	e3ff421bc8a6492e
+4596	4634	7223620587684284	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	c2886e230c1f169a
+4634	4674	7223620588080731	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	c424ed31adcc98
+4634	4674	7223620588080731	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	c424ed31adcc98
+4711	4747	7223620588811044	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	c000eb17c7931be2
+4747	4782	7223620589178389	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	3860e7fb904103a7
+4783	4833	7223620589671171	CMakeFiles/googletest-populate-complete	83c02558e056e166
+4783	4833	7223620589671171	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	83c02558e056e166
+4674	4711	7223620588462129	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	a26e35e5443c78f1
+4711	4747	7223620588811044	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	c000eb17c7931be2
+4747	4782	7223620589178389	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	3860e7fb904103a7
+4783	4833	7223620589671171	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	83c02558e056e166
+4783	4833	7223620589671171	C:/Users/nozdr/source/repos/lab_2/out/build/x64-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	83c02558e056e166
