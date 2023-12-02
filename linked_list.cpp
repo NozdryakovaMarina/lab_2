@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
@@ -19,17 +20,14 @@ namespace list {
 		Node<T>* _head;
 		Node<T>* _tail;
 	public:
-		LinkedList() {
-			_head = NULL;
-			_tail = NULL;
-		}
+		LinkedList(): _head(nullptr), _tail(nullptr) {}
 
 		LinkedList(const LinkedList<T>& l) {
-			_head = NULL;
-			_tail = NULL;
+			_head = nullptr;
+			_tail = nullptr;
 			Node<T>* tmp = l._head;
 			while (tmp != l._head) {
-				Node<T>* node = new Node<T>(*tmp);
+				Node<T>* node = new Node<T>(tmp->_val);
 				push_tail(node);
 				tmp = tmp->_next;
 			}
@@ -55,11 +53,11 @@ namespace list {
 		}
 
 		void push_head(Node<T>* h) {
-			if (_head != NULL) {
+			if (_head != nullptr) {
 				_head->_prev = h;
 				_tail->_next = h;
 			}
-			if (_tail == NULL) 
+			if (_head == nullptr) 
 				_tail = h;
 			h->_next = _head;
 			h->_prev = _tail;
@@ -67,15 +65,21 @@ namespace list {
 		}
 
 		void push_head(LinkedList<T>& l) {
-
+			if (l._head == nullptr)
+				throw invalid_argument("The list is empty.");
+			if (_head == nullptr) {
+				_head = l._head;
+				_tail = l._tail;
+			}
+			   
 		}
 
 		void push_tail(Node<T>* t) {
-			if (_tail != NULL) {
+			if (_tail != nullptr) {
 				_tail->_prev = t;
 				_head->_next = t;
 			}
-			if (_head == NULL)
+			if (_tail == nullptr)
 				_head = t;
 			t->_prev = _head;
 			t->_next = _tail;
@@ -83,33 +87,33 @@ namespace list {
 		}
 
 		void push_tail(LinkedList<T>& l) {
+			if (l.pop_head == nullptr)
+				throw invalid_argument("The list is empty.");
+			if (_tail == nullptr) {
+				_head = l._head;
+				_tail = l._tail;
+			}
 
 		}
 
 		void pop_head() {
-			if (_head == NULL) return;
+			if (_head == nullptr)
+				throw invalid_argument("The list is empty.");
 
 			Node<T>* tmp = _head->_next;
-			if (tmp != NULL)
-				tmp->_prev = NULL;
-			else
-				_tail = NULL;
-
-			delete _head;
-			_head = tmp;
+			_head->_prev = _tail;
+			_tail->_next = _head;
+			delete tmp;
 		}
 
 		void pop_tail() {
-			if (_tail == NULL) return;
+			if (_tail == nullptr)
+				throw invalid_argument("The list is empty.");
 
 			Node<T>* tmp = _tail->_prev;
-			if (tmp != NULL)
-				tmp->_next = NULL;
-			else
-				_head = NULL;
-
-			delete _tail;
-			_tail = tmp;
+			_head->_prev = _tail;
+			_tail->_next = _head;
+			delete tmp;
 		}
 
 		void delete_node(T val) {
@@ -117,15 +121,25 @@ namespace list {
 
 		}
 
-		Node<T>* operator[](int ind) {
-			Node<T>* tmp = _head;
-			for (int i = 0; i < ind; i++) {
-				if (tmp == NULL)
-					return tmp;
-				tmp = tmp->next;
-				i++;
+		int get_size(Node<T>* h) const{
+			int count = 0;
+			Node<T>* tmp = h;
+			while (tmp != h) {
+				count++;
+				tmp = tmp->_next;
 			}
-			return tmp;
+			return count;
+		}
+		
+		Node<T>* operator[](int ind) const {
+			if (ind < 0 || ind > = get_size(_head))
+				throw std::out_of_range("Index is out of range.");
+			else {
+				Node<T>* tmp = _head;
+				for (int i = 0; i < ind; i++)
+					tmp = tmp->next;
+				return tmp;
+			}
 		}
 	};
 }
