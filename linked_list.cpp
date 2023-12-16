@@ -30,13 +30,11 @@ namespace list {
         Node<T>* _tail; 
 
     public:
-        // Default constructor
         LinkedList() : _head(nullptr), _tail(nullptr) {}
 
         Node<T>* get_head() const { return _head; }
         Node<T>* get_tail() const { return _tail; }
 
-        // Конструктор, заполняющий список случайными значениями
         LinkedList(size_t n, T a, T b) : _head(nullptr), _tail(nullptr){
             std::random_device rd;
             std::mt19937 gen(rd());
@@ -46,7 +44,6 @@ namespace list {
             }
         }
 
-        // Деструктор
         ~LinkedList() = default;
         //~LinkedList() {
         //    while (_head != _tail) {
@@ -57,7 +54,6 @@ namespace list {
         //    delete _tail;
         //}
 
-        // Конструктор копирования
         LinkedList(const LinkedList<T>& l) : _head(nullptr), _tail(nullptr){
             Node<T>* cur = l._head;
             while (cur != nullptr) {
@@ -83,7 +79,6 @@ namespace list {
             return *this;
         }
 
-        // Добавление элемента в конец списка
         void push_tail(T d) {
             Node<T>* tmp = new Node(d);
             if (_tail == nullptr) {
@@ -101,7 +96,6 @@ namespace list {
             } 
         }
 
-        // Добавление другого списка в конец списка
         void push_tail(const LinkedList& l) {
             if (l._tail == nullptr)
                 throw std::invalid_argument("LinkedList::The list is empty");
@@ -118,7 +112,6 @@ namespace list {
             }
         }
 
-        // Добавление элемента в начало списка
         void push_head(T d) {
             Node<T>* tmp = new Node(d);
             if (_head == nullptr) {
@@ -136,7 +129,6 @@ namespace list {
             } 
         }
 
-        // Добавление списка в начало списка
         void push_head(const LinkedList& _list) {
             if (_list._head == nullptr)
                 throw std::invalid_argument("LinkedList::The list is empty");
@@ -153,7 +145,6 @@ namespace list {
             }
         }
 
-        // Удаление элемента из начала списка
         void pop_head() {
             if (_head == NULL)
                 throw std::invalid_argument("LinkedList::The list is empty");
@@ -166,7 +157,6 @@ namespace list {
             }
         }
 
-        // Удаление элемента из конца списка
         void pop_tail() {
             if (_tail == NULL)
                 throw std::invalid_argument("LinkedList::The list is empty");
@@ -179,7 +169,6 @@ namespace list {
             }
         }
 
-        // Удаление всех элементов с информационным полем, равным переданному
         void delete_node(T d) {
             if (_head == nullptr)
                 throw std::invalid_argument("LinkedList::The list is empty");
@@ -210,7 +199,6 @@ namespace list {
             }
         }
 
-        // Операция доступа по индексу для чтения
         T& operator[](size_t index) const {
             if (index < get_elem()) {
                 Node<T>* curr = _head;
@@ -224,7 +212,6 @@ namespace list {
             }
         }
 
-        // Операция доступа по индексу для записи
         T& operator[](size_t index) {
             if (index < get_elem()) {
                 Node<T>* curr = _head;
